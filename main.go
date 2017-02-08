@@ -45,8 +45,9 @@ func hamiltonHeard() {
 		isIn = true
 		stateMu.Unlock()
 		go hamiltonEntered()
+	} else {
+		stateMu.Unlock()
 	}
-	stateMu.Unlock()
 }
 func checkLeft() {
 	stateMu.Lock()
@@ -54,8 +55,9 @@ func checkLeft() {
 		isIn = false
 		stateMu.Unlock()
 		go hamiltonLeft()
+	} else {
+		stateMu.Unlock()
 	}
-	stateMu.Unlock()
 }
 func hamiltonEntered() {
 	//JACK put your action here
