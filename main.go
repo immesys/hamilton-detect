@@ -22,7 +22,7 @@ func main() {
 			checkLeft()
 		}
 	}()
-	for m := range subchan {
+	for _ = range subchan {
 		hamiltonHeard()
 	}
 }
